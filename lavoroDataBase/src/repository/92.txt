@@ -1,0 +1,4 @@
+nome: Giacomo Ravagnan
+data di nascita : 26/05/2000
+comune : Venezia
+sesso : M
