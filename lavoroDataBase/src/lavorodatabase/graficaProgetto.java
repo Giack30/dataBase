@@ -5,6 +5,12 @@
  */
 package lavorodatabase;
 
+import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Administrator
@@ -27,24 +33,26 @@ public class graficaProgetto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        comune = new javax.swing.JLabel();
+        comune1 = new javax.swing.JLabel();
         male = new javax.swing.JRadioButton();
         female = new javax.swing.JRadioButton();
-        sesso = new javax.swing.JLabel();
+        sesso1 = new javax.swing.JLabel();
         confirm = new javax.swing.JButton();
-        idCode = new javax.swing.JTextField();
+        idCode1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         getNome = new javax.swing.JTextField();
-        nome = new javax.swing.JLabel();
+        nome1 = new javax.swing.JLabel();
         getCognome = new javax.swing.JTextField();
-        cognome = new javax.swing.JLabel();
-        getData = new javax.swing.JTextField();
-        data = new javax.swing.JLabel();
+        cognome1 = new javax.swing.JLabel();
         getComune = new javax.swing.JTextField();
+        VerData = new javax.swing.JLabel();
+        Giorno = new javax.swing.JSpinner();
+        Anno = new javax.swing.JSpinner();
+        Mese = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        comune.setText("comune di nascità");
+        comune1.setText("comune di nascità");
 
         male.setText("m");
         male.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -57,7 +65,7 @@ public class graficaProgetto extends javax.swing.JFrame {
             }
         });
 
-        sesso.setText("sesso");
+        sesso1.setText("sesso");
 
         confirm.setText("confirm");
         confirm.addActionListener(new java.awt.event.ActionListener() {
@@ -68,11 +76,18 @@ public class graficaProgetto extends javax.swing.JFrame {
 
         jLabel1.setText("idCode");
 
-        nome.setText("nome");
+        nome1.setText("nome");
 
-        cognome.setText("cognome");
+        cognome1.setText("cognome");
 
-        data.setText("data di nascita gg/mm/aa");
+        VerData.setText("Data di Nascita ");
+
+        Giorno.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+
+        Anno.setModel(new javax.swing.SpinnerNumberModel(1900, 1900, 2016, 1));
+        Anno.setToolTipText("");
+
+        Mese.setModel(new javax.swing.SpinnerListModel(new String[] {"Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,27 +95,35 @@ public class graficaProgetto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(idCode)
-                    .addComponent(confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Giorno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mese, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Anno, javax.swing.GroupLayout.PREFERRED_SIZE, 67, Short.MAX_VALUE))
+                    .addComponent(idCode1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(confirm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(male, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(female, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(getComune)
-                    .addComponent(getData)
-                    .addComponent(getCognome)
-                    .addComponent(getNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(getComune, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(getCognome, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(getNome, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cognome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comune, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(data)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cognome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comune1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                            .addComponent(sesso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(VerData)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -108,32 +131,34 @@ public class graficaProgetto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nome)
+                    .addComponent(nome1)
                     .addComponent(getNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(getCognome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cognome))
+                    .addComponent(cognome1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(getData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(data))
+                    .addComponent(Giorno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mese, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Anno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VerData))
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comune1)
+                    .addComponent(getComune, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(getComune, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comune))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(male)
                     .addComponent(female)
-                    .addComponent(sesso))
+                    .addComponent(sesso1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(confirm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idCode1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,9 +169,53 @@ public class graficaProgetto extends javax.swing.JFrame {
     }//GEN-LAST:event_femaleActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-        if(getNome.toString()==""){
+       String nome=getNome.getText(); //Salvo tutti i dati
+       dataBase c;
+       String idCode;
+        String cognome=getCognome.getText();
+        String comune=getComune.getText();
+        idCode1.setText("");
+        nome1.setForeground(Color.black);
+        nome1.setText("Nome");
+        cognome1.setForeground(Color.black);
+        cognome1.setText("Cognome");
+        sesso1.setForeground(Color.black);
+        sesso1.setText("Sesso");
+        comune1.setForeground(Color.black);
+        comune1.setText("Comune");
+        String sesso = null;       //se pulsante F è premuto si salva il sesso femminile, altrimenti M
+        if(female.isSelected())    sesso= "F";
+        else if(male.isSelected()) sesso="M";    //Possibilità di lasciare il campo vuoto
+        Object giorno=Giorno.getValue();
+        Object mese=Mese.getValue();
+        Object anno=Anno.getValue();
+        String data=giorno+"/"+mese+"/"+anno;
+        if(nome.equals("") || cognome.equals("") || sesso==null || comune.equals("")){
+            if(nome.equals("")){
+                nome1.setForeground(Color.red);
+                nome1.setText("*nome");
+            }
+            if(cognome.equals("")){
+               cognome1.setForeground(Color.red);
+                cognome1.setText("*cognome");
+            }
+            if(comune.equals("")){
+                comune1.setForeground(Color.red);
+                comune1.setText("*comune");
+            }
+            if(sesso == null){
+                sesso1.setForeground(Color.red);
+                sesso1.setText("*sesso");
+            }
+        }else{
             
-            nome.setText("*nome");
+            try {
+                c=new dataBase(nome,cognome,data,comune,sesso);
+                idCode=c.getIDCode();
+                idCode1.setText(idCode);
+       } catch (IOException ex) {
+           Logger.getLogger(graficaProgetto.class.getName()).log(Level.SEVERE, null, ex);
+       }
         }
     }//GEN-LAST:event_confirmActionPerformed
 
@@ -186,19 +255,21 @@ public class graficaProgetto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cognome;
-    private javax.swing.JLabel comune;
+    private javax.swing.JSpinner Anno;
+    private javax.swing.JSpinner Giorno;
+    private javax.swing.JSpinner Mese;
+    private javax.swing.JLabel VerData;
+    private javax.swing.JLabel cognome1;
+    private javax.swing.JLabel comune1;
     private javax.swing.JButton confirm;
-    private javax.swing.JLabel data;
     private javax.swing.JRadioButton female;
     private javax.swing.JTextField getCognome;
     private javax.swing.JTextField getComune;
-    private javax.swing.JTextField getData;
     private javax.swing.JTextField getNome;
-    private javax.swing.JTextField idCode;
+    private javax.swing.JTextField idCode1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton male;
-    private javax.swing.JLabel nome;
-    private javax.swing.JLabel sesso;
+    private javax.swing.JLabel nome1;
+    private javax.swing.JLabel sesso1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,10 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="idCode" alignment="1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="Giorno" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Mese" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Anno" pref="67" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="idCode1" alignment="1" max="32767" attributes="0"/>
                   <Component id="confirm" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="male" min="-2" pref="105" max="-2" attributes="0"/>
@@ -34,21 +41,25 @@
                       <Component id="female" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <Component id="getComune" alignment="1" max="32767" attributes="0"/>
-                  <Component id="getData" alignment="1" max="32767" attributes="0"/>
                   <Component id="getCognome" alignment="1" max="32767" attributes="0"/>
                   <Component id="getNome" alignment="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="nome" alignment="0" max="32767" attributes="0"/>
-                  <Component id="cognome" alignment="0" max="32767" attributes="0"/>
-                  <Component id="comune" alignment="0" max="32767" attributes="0"/>
-                  <Component id="sesso" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="data" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nome1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cognome1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="comune1" alignment="0" pref="147" max="32767" attributes="0"/>
+                          <Component id="sesso1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="VerData" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -59,44 +70,46 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="nome" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="nome1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="getNome" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="getCognome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cognome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cognome1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="getData" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="data" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Giorno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Mese" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Anno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="VerData" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="comune1" min="-2" max="-2" attributes="0"/>
+                  <Component id="getComune" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="getComune" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comune" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="male" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="female" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sesso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sesso1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="confirm" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="idCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idCode1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <EmptySpace pref="96" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="comune">
+    <Component class="javax.swing.JLabel" name="comune1">
       <Properties>
         <Property name="text" type="java.lang.String" value="comune di nascit&#xe0;"/>
       </Properties>
@@ -116,7 +129,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="femaleActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="sesso">
+    <Component class="javax.swing.JLabel" name="sesso1">
       <Properties>
         <Property name="text" type="java.lang.String" value="sesso"/>
       </Properties>
@@ -129,7 +142,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="idCode">
+    <Component class="javax.swing.JTextField" name="idCode1">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -138,26 +151,59 @@
     </Component>
     <Component class="javax.swing.JTextField" name="getNome">
     </Component>
-    <Component class="javax.swing.JLabel" name="nome">
+    <Component class="javax.swing.JLabel" name="nome1">
       <Properties>
         <Property name="text" type="java.lang.String" value="nome"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="getCognome">
     </Component>
-    <Component class="javax.swing.JLabel" name="cognome">
+    <Component class="javax.swing.JLabel" name="cognome1">
       <Properties>
         <Property name="text" type="java.lang.String" value="cognome"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="getData">
+    <Component class="javax.swing.JTextField" name="getComune">
     </Component>
-    <Component class="javax.swing.JLabel" name="data">
+    <Component class="javax.swing.JLabel" name="VerData">
       <Properties>
-        <Property name="text" type="java.lang.String" value="data di nascita gg/mm/aa"/>
+        <Property name="text" type="java.lang.String" value="Data di Nascita "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="getComune">
+    <Component class="javax.swing.JSpinner" name="Giorno">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="1" maximum="31" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="Anno">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="1900" maximum="2016" minimum="1900" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="Mese">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel type="list">
+            <ListItem value="Gennaio"/>
+            <ListItem value="Febbraio"/>
+            <ListItem value="Marzo"/>
+            <ListItem value="Aprile"/>
+            <ListItem value="Maggio"/>
+            <ListItem value="Giugno"/>
+            <ListItem value="Luglio"/>
+            <ListItem value="Agosto"/>
+            <ListItem value="Settembre"/>
+            <ListItem value="Ottobre"/>
+            <ListItem value="Novembre"/>
+            <ListItem value="Dicembre"/>
+          </SpinnerModel>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
